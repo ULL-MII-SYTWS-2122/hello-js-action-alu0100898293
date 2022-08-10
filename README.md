@@ -18,6 +18,6 @@ The time we greeted you.
 
 ## Example usage
 
-uses: actions/hello-world-javascript-action@v1
+uses: ULL-MII-SYTWS-2122/hello-js-action-alu0100898293@v1
 with:
   who-to-greet: 'Mona the Octocat'
