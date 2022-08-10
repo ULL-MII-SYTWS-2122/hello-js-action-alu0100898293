@@ -2,7 +2,7 @@
 
 # hello-js-action-alu0100898293
 
-This action prints "Hello World" or "Hello" + the name of a person to greet to the log.
+This action create a comment whenever a pull request is opened on our repository and add labels depending on the file types changed. The comment will contain a summary of the changes introduced in the pull request.
 
 ## Inputs
 
@@ -10,14 +10,27 @@ This action prints "Hello World" or "Hello" + the name of a person to greet to t
 
 **Required** The name of the person to greet. Default `"World"`.
 
-## Outputs
+### `owner`
 
-### `time`
+**Required** The owner of the repository
 
-The time we greeted you.
+### `repo`
+    
+**Required** The name of the repository
+
+### `pr_number`
+
+**Required** The number of the pull request
+
+### `token`
+
+**Required** The token to use to access the GitHub API
 
 ## Example usage
 
-uses: actions/hello-world-javascript-action@v1
+uses: ULL-MII-SYTWS-2122/hello-js-action-alu0100898293@optional
 with:
-  who-to-greet: 'Mona the Octocat'
+    owner: ${{ github.repository_owner }}
+    repo: ${{ github.event.repository.name }}
+    pr_number: ${{ github.event.number }}
+    token: ${{ secrets.GITHUB_TOKEN }}
